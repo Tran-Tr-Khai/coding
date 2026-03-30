@@ -9,7 +9,7 @@ from typing import List
 # Check i vs i + 1 -> result 
 
 # Time: Sort O(nlogn), Space: O(1)
-def hashset(nums: List[int]) -> int:
+def sort(nums: List[int]) -> int:
     if not nums: return 0
     l = sorted(list(set(nums))) 
     
@@ -31,7 +31,7 @@ def hashset(nums: List[int]) -> int:
 # Dùng 1 cờ để tìm ra số đứng trước liên tiêp nhỏ nhất 
 # Khi tìm thấy được số nhỏ nhất ta sẽ duyệt qua set nhờ sức mạnh của toán tử in trong set để tìm các số liên tiếp lớn hơn. 
 
-def hashset_pro(nums: List[int]) -> int: 
+def hashset(nums: List[int]) -> int: 
     if not nums: return 0
     num_set = set(nums)
     longest_streak = 1
@@ -51,6 +51,6 @@ def hashset_pro(nums: List[int]) -> int:
 
 if __name__ == "__main__": 
     nums = [100,4,200,1,3,2]
-    print(hashset_pro(nums))
+    print(hashset(nums))
 
 
