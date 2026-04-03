@@ -1,8 +1,6 @@
-# Daily Coding Problem — Luyện thuật toán mỗi ngày
+# Daily Coding Problem
 
-> Hành trình chinh phục DSA từ cơ bản đến nâng cao,
-> định hướng **Data Engineering & MLOps**,
-> phân tổ chức theo tuần để dễ theo dõi tiến độ.
+> python
 
 ---
 
@@ -17,7 +15,7 @@
 
 ## 1. Giới thiệu
 
-Kho lưu trữ bài giải thuật toán hàng ngày, được tổ chức theo từng tuần với mục tiêu rõ ràng.
+Kho lưu trữ bài giải thuật toán hàng ngày.
 Mỗi nhóm bài tập gắn liền với ứng dụng thực tế trong lĩnh vực **Data Engineering**, **ML Pipeline** và **MLOps**.
 
 **Nguyên tắc luyện tập:**
