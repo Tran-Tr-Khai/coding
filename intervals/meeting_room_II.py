@@ -19,7 +19,7 @@
 # Giải thích: Hai cuộc họp không hề đụng nhau. Xếp cuộc họp [2, 4] vào Phòng 1. Đợi họp xong, phòng trống, ta tiếp tục cho cuộc họp [7, 10] dùng lại Phòng 1. Chỉ cần 1 phòng duy nhất.
 
 import heapq
-
+# Time: O(nlogn), space: O(n
 def minHeap(intervals: list[list[int]]) -> int:
     if not intervals: return 0
     intervals.sort(key=lambda x: x[0])
