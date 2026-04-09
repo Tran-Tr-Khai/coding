@@ -10,6 +10,7 @@
 2. [Tổng quan tiến độ](#2-tổng-quan-tiến-độ)
 3. [Lộ trình theo tuần](#3-lộ-trình-theo-tuần)
    - [Tuần 1 — Hashing, Two Pointers, Sliding Window, Stack & Binary Search](#tuần-1)
+   - [Tuần 2 — Intervals, Heaps, Trees & Graph (DAG)](#tuần-2)
 
 ---
 
@@ -34,8 +35,9 @@ Mỗi nhóm bài tập gắn liền với ứng dụng thực tế trong lĩnh v
 | Tuần | Chủ đề | Số bài | Trạng thái |
 |------|--------|-------:|-----------|
 | Tuần 1 | Hashing · Two Pointers · Sliding Window · Stack & Binary Search | 20 | ✅ Hoàn thành |
+| Tuần 2 | Intervals · Heaps · Trees · Graph (DAG) | 20 | ⏳ Đang tiến hành |
 
-**Tổng:** `20 / 20` bài đã giải
+**Tổng:** `20 / 40` bài đã giải
 
 ---
 
@@ -103,6 +105,73 @@ Mỗi nhóm bài tập gắn liền với ứng dụng thực tế trong lĩnh v
 | 3 | Binary Search | Easy | Binary Search | Nền tảng của mọi thuật toán tìm kiếm tối ưu |
 | 4 | Search a 2D Matrix | Medium | Binary Search 2D | Tìm kiếm trên dữ liệu dạng bảng (tương tự DataFrame) |
 | 5 | Search in Rotated Sorted Array | Medium | Modified Binary Search | Tìm kiếm trên chuỗi thời gian bị lệch |
+
+</details>
+
+---
+
+<details open>
+<summary><strong>Tuần 2 — Intervals, Heaps, Trees & Graph (DAG)</strong> &nbsp;|&nbsp; 20 bài &nbsp;|&nbsp; ⏳ Đang tiến hành</summary>
+
+<br>
+
+### Nhóm 1 — Intervals (Xử lý khoảng thời gian)
+
+> Kỹ thuật sống còn khi làm việc với Time-series data, log server, hoặc xử lý các sự kiện chồng chéo.
+> Rất quan trọng trong CDC (Change Data Capture), gom nhóm session của user, hoặc xử lý khoảng thời gian hệ thống bị downtime.
+
+| # | Bài toán | Độ khó | Kỹ thuật | Ứng dụng thực tế |
+|---|----------|:------:|----------|-----------------|
+| 1 | Meeting Rooms | Easy | Sorting + So sánh mốc | Kiểm tra xung đột (conflict) lịch chạy job |
+| 2 | Meeting Rooms II | Medium | Min-Heap / Two Pointers | Tính số lượng worker/node tối đa cần bật cùng lúc |
+| 3 | Insert Interval | Medium | Lặp & Merge | Cập nhật thêm một mốc log mới vào chuỗi đã có |
+| 4 | Merge Intervals | Medium | Sorting + Trạng thái | Hợp nhất các phiên (sessions) đứt quãng của user |
+| 5 | Non-overlapping Intervals | Medium | Greedy | Tối ưu hóa tài nguyên, loại bỏ các task dư thừa |
+
+---
+
+### Nhóm 2 — Heap & Priority Queue
+
+> Luôn giữ được phần tử Lớn nhất / Nhỏ nhất trong O(1) và cập nhật trong O(log n).
+> Pattern "trùm" để xử lý Streaming Data (Kafka, Kinesis), tìm Top K metrics realtime, và lập lịch (Scheduling).
+
+| # | Bài toán | Độ khó | Kỹ thuật | Ứng dụng thực tế |
+|---|----------|:------:|----------|-----------------|
+| 1 | Kth Largest Element in a Stream | Easy | Min-Heap | Tính toán Top metrics trên luồng dữ liệu thời gian thực |
+| 2 | Last Stone Weight | Easy | Max-Heap | Mô phỏng việc tiêu thụ message theo độ ưu tiên |
+| 3 | K Closest Points to Origin | Medium | Max-Heap | Xử lý dữ liệu không gian (Spatial Data) / Location |
+| 4 | Task Scheduler | Medium | Max-Heap + Queue | Lên lịch chạy pipeline với cooldown time (Rate limiting) |
+| 5 | Merge k Sorted Lists | Hard | Min-Heap / Divide & Conquer | Trái tim của MapReduce: Trộn file log từ nhiều server |
+
+---
+
+### Nhóm 3 — Trees & Tries
+
+> Cấu trúc dữ liệu phân cấp, tìm kiếm theo tiền tố.
+> Phổ biến trong việc parse và xử lý file JSON lồng nhau phức tạp, phân quyền dữ liệu, hoặc xây dựng core search engine (như ElasticSearch).
+
+| # | Bài toán | Độ khó | Kỹ thuật | Ứng dụng thực tế |
+|---|----------|:------:|----------|-----------------|
+| 1 | Invert Binary Tree | Easy | DFS / BFS | Thao tác xoay/biến đổi cấu trúc dữ liệu cơ bản |
+| 2 | Lowest Common Ancestor of a BST | Medium | BST Properties | Tìm điểm chung của 2 node trong hệ thống phân quyền |
+| 3 | Implement Trie (Prefix Tree) | Medium | Trie Node | Xây dựng bộ đếm tiền tố, Autocomplete cho search |
+| 4 | Design Add and Search Words | Medium | Trie + DFS | Xử lý wildcard query (VD: SELECT * WHERE name LIKE 'A_C') |
+| 5 | Serialize & Deserialize Binary Tree | Hard | BFS / DFS Stringify | Chuyển đổi dữ liệu in-memory sang JSON/Byte để truyền đi |
+
+---
+
+### Nhóm 4 — Graphs & Topological Sort (DAG)
+
+> Nhận diện các mối quan hệ đa chiều và thứ tự phụ thuộc.
+> Nếu bạn làm Airflow, dbt hay Spark, bạn ĐANG làm việc với Graph. Kỹ thuật này giúp phân tích luồng dữ liệu (Data Lineage) và giải quyết dependency.
+
+| # | Bài toán | Độ khó | Kỹ thuật | Ứng dụng thực tế |
+|---|----------|:------:|----------|-----------------|
+| 1 | Number of Islands | Medium | DFS / BFS Matrix | Phân cụm/gom cụm dữ liệu thô (Clustering cơ bản) |
+| 2 | Max Area of Island | Medium | DFS + State | Tính toán dung lượng lớn nhất của một cụm dữ liệu |
+| 3 | Clone Graph | Medium | HashMap + DFS | Deep copy (sao chép sâu) metadata của hệ thống |
+| 4 | Course Schedule | Medium | Cycle Detection | Phát hiện vòng lặp vô hạn (Cycle) gây sập Airflow DAG |
+| 5 | Course Schedule II | Medium | Topological Sort | In ra Execution Plan chuẩn xác cho các luồng ETL |
 
 </details>
 
